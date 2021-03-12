@@ -27,7 +27,7 @@ namespace QueryRegistry
             "<pcNames>"
 
 
-        };
+            };
         //Update PCs
         private void button1_Click(object sender, EventArgs e)
         {
