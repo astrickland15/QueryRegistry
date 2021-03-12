@@ -24,27 +24,7 @@ namespace QueryRegistry
 
         List<string> ComputerList = new List<string>()
             {
-            "ACCOUNTING-02",
-            "BDM-01",
-            "blake-02",
-            "CSM-04",
-            "CSM-05",
-            "DEV-03",
-            "DEV-04",
-            "DEV-06",
-            "Dev-07",
-            "studio-01",
-            "mike-02",
-            "MKTG-01",
-            "MKTG-02",
-            "NSCEO-04",
-            "OFFICEADMIN-01",
-            "rick-02",
-            "CSM-07",
-            "BUILDING-01",
-            "MKTG-07",
-            "MKTG-08",
-            "DATAANALYST-01"
+            "<pcNames>"
 
 
         };
@@ -69,12 +49,12 @@ namespace QueryRegistry
                         WUkey.OpenSubKey("WindowsUpdate");
 
                         //write to remote WindowsUpdate key
-                        WUkey.SetValue("WUServer", "http://192.168.0.50:8530", RegistryValueKind.String);
-                        WUkey.SetValue("WUStatusServer", "http://192.168.0.50:8530", RegistryValueKind.String);
+                        WUkey.SetValue("WUServer", "http://<ipAddress>:8530", RegistryValueKind.String);
+                        WUkey.SetValue("WUStatusServer", "http://<ipAddress>:8530", RegistryValueKind.String);
                         WUkey.SetValue("ElevateNonAdmins", 1, RegistryValueKind.DWord);
                         WUkey.SetValue("TargetGroupEnabled", 1, RegistryValueKind.DWord);
 
-                        if (computer.ToLower() == "dataanalyst-01")
+                        if (computer.ToLower() == "<pcName>")
                         {
                             WUkey.SetValue("TargetGroup", "WU Test Machine", RegistryValueKind.String);
                         }
